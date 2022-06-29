@@ -18,6 +18,7 @@ public class BookService {
 
         //Collections.sort(bookList,(Comparator.comparing(Book::getName)));
         //Collections.sort(bookList,((o1, o2) -> o2.getName().compareTo(o1.getName())));
+
         Collections.sort(bookList,((o1, o2) -> o1.getName().compareTo(o2.getName())));
 
         return bookList;
