@@ -41,6 +41,16 @@ public class StreamExceptionHandling {
         List<Integer> list2 = Arrays.asList(1,0);
         list2.forEach(handleGenericException(s-> System.out.println(10/s),ArithmeticException.class));
 
+        List<Integer> list3 = Arrays.asList(10,20);
+        list3.forEach(i-> {
+            try {
+                Thread.sleep(i);
+                System.out.println(i);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
     }
 
     public static void printList(String s){
